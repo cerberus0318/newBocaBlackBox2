@@ -2,7 +2,7 @@ import React from "react";
 
 export const Container = ({
   children,
-  size = "medium",
+  size = "small",
   width = "large",
   className = "",
   ...props

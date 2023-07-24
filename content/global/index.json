@@ -5,20 +5,118 @@
       "color": "orange",
       "style": "float"
     },
+    "office": "561.483.9036",
+    "social": {
+      "youtube": "/",
+      "map": "/",
+      "facebook": "/",
+      "instagram": "/",
+      "email": "/"
+    },
     "name": "Tina Starter",
     "color": "default",
+    "venures": [
+      {
+        "venure": "content/venures/Boca-Black-Box.md",
+        "label": "Boca Black Box"
+      },
+      {
+        "venure": "content/venures/Box-20.md",
+        "label": "Box 2.0"
+      },
+      {
+        "venure": "content/venures/Town-Hall-Event-Center.md",
+        "label": "Town Hall Event Center"
+      }
+    ],
     "nav": [
       {
-        "href": "",
+        "href": "home",
         "label": "Home"
       },
       {
         "href": "about",
-        "label": "About"
+        "label": "About",
+        "subnav": [
+          {
+            "href": "about/meet-team",
+            "label": "Meet The Team"
+          },
+          {
+            "href": "about/group-tickets",
+            "label": "Group Tickets"
+          },
+          {
+            "href": "about/box-office-info",
+            "label": "Box Office Information"
+          },
+          {
+            "href": "about/seating-chart",
+            "label": "Seating Chart"
+          },
+          {
+            "href": "about/subscription",
+            "label": "Subscription"
+          }
+        ]
       },
       {
-        "href": "posts",
-        "label": "Blog"
+        "href": "ticket",
+        "label": "Tickets",
+        "subnav": [
+          {
+            "href": "ticket/calendar",
+            "label": "Calendar"
+          },
+          {
+            "href": "ticket/events-by-venue",
+            "label": "Events by Venue "
+          }
+        ]
+      },
+      {
+        "href": "gallery",
+        "label": "Gallery"
+      },
+      {
+        "href": "contact",
+        "label": "Contact"
+      },
+      {
+        "href": "opportunity",
+        "label": "Opportunity",
+        "subnav": [
+          {
+            "href": "opportunity/sponsorship",
+            "label": "Sponsorship"
+          },
+          {
+            "href": "opportunity/donation",
+            "label": "Donation"
+          },
+          {
+            "href": "opportunity/buy-seat",
+            "label": "Buy a Seat"
+          }
+        ]
+      },
+      {
+        "href": "submission",
+        "label": "Submission",
+        "subnav": [
+          {
+            "href": "submission/performance",
+            "label": "Performance Submissions"
+          },
+          {
+            "href": "submission/rental",
+            "label": "Rental Submissions"
+          },
+          {
+            "href": "submission/employment",
+            "label": "Employment Submissions "
+          }
+        ]
       }
     ]
   },

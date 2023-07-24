@@ -4,6 +4,13 @@ import { useRouter } from "next/router";
 import { Container } from "../util/container";
 import { useTheme } from ".";
 import { Icon } from "../util/icon";
+import {
+  FaYoutube,
+  FaMapMarkerAlt,
+  FaFacebook,
+  FaInstagram,
+  FaEnvelope,
+} from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
 import { GlobalHeader } from "../../tina/__generated__/types";
 
@@ -62,99 +69,136 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
   }, []);
 
   return (
-    <div
-      className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
-    >
-      <Container size="custom" className="py-0 relative z-10 max-w-8xl">
-        <div className="flex items-center justify-between gap-6">
-          <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
-            <Link
-              href="/"
-              className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
-            >
-              <Icon
-                tinaField={tinaField(data, "icon")}
-                parentColor={data.color}
-                data={{
-                  name: data.icon.name,
-                  color: data.icon.color,
-                  style: data.icon.style,
-                }}
-              />
-              <span data-tina-field={tinaField(data, "name")}>{data.name}</span>
-            </Link>
-          </h4>
-          <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
-            {data.nav &&
-              data.nav.map((item, i) => {
-                const activeItem =
-                  (item.href === ""
-                    ? router.asPath === "/"
-                    : router.asPath.includes(item.href)) && isClient;
-                return (
-                  <li
-                    key={`${item.label}-${i}`}
-                    className={`${
-                      activeItem ? activeItemClasses[theme.color] : ""
-                    }`}
-                  >
-                    <Link
-                      data-tina-field={tinaField(item, "label")}
-                      href={`/${item.href}`}
-                      className={`relative select-none	text-base inline-block tracking-wide transition duration-150 ease-out hover:opacity-100 py-8 px-4 ${
-                        activeItem ? `` : `opacity-70`
+    <>
+      <div className={`hidden md:block bg-red-900 text-white`}>
+        <Container>
+          <div className="flex justify-between items-center">
+            <div className="flex gap-4">
+              <button className="bg-white text-red-900 py-2 px-6 rounded-md">
+                View All Shows
+              </button>
+              <button className="bg-white text-red-900 py-2 px-6 rounded-md">
+                Newsletter Subscription
+              </button>
+            </div>
+            <h2>Box office: {data.office}</h2>
+            <div className="flex">
+              {data.social && data.social.youtube && (
+                <Link href={data.social.youtube} className="mx-2">
+                  <FaYoutube className="text-lg" />
+                </Link>
+              )}
+              {data.social && data.social.map && (
+                <Link href={data.social.map} className="mx-2">
+                  <FaMapMarkerAlt className="text-lg" />
+                </Link>
+              )}
+              {data.social && data.social.facebook && (
+                <Link href={data.social.facebook} className="mx-2">
+                  <FaFacebook className="text-lg" />
+                </Link>
+              )}
+              {data.social && data.social.instagram && (
+                <Link href={data.social.instagram} className="mx-2">
+                  <FaInstagram className="text-lg" />
+                </Link>
+              )}
+              {data.social && data.social.email && (
+                <Link href={data.social.email} className="mx-2">
+                  <FaEnvelope className="text-lg" />
+                </Link>
+              )}
+            </div>
+          </div>
+        </Container>
+      </div>
+      <div
+        className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
+      >
+        <Container size="custom" className="py-0 relative z-10 max-w-8xl">
+          <div className="flex items-center justify-between gap-6">
+            
+            <div className="flex gap-2 sm:gap-4 lg-gap-2">
+              {data.venures && data.venures.map((item, i) => {
+                return <button className="bg-red-900 text-white py-2 px-6 rounded-md mx-2 w-contnet">
+                  {item.label}
+                </button>
+              })}
+            </div>
+            <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
+              {data.nav &&
+                data.nav.map((item, i) => {
+                  const activeItem =
+                    (item.href === ""
+                      ? router.asPath === "/"
+                      : router.asPath.includes(item.href)) && isClient;
+                  return (
+                    <li
+                      key={`${item.label}-${i}`}
+                      className={`${
+                        activeItem ? activeItemClasses[theme.color] : ""
                       }`}
                     >
-                      {item.label}
-                      {activeItem && (
-                        <svg
-                          className={`absolute bottom-0 left-1/2 w-[180%] h-full -translate-x-1/2 -z-1 opacity-10 dark:opacity-15 ${
-                            activeBackgroundClasses[theme.color]
-                          }`}
-                          preserveAspectRatio="none"
-                          viewBox="0 0 230 230"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect
-                            x="230"
-                            y="230"
-                            width="230"
-                            height="230"
-                            transform="rotate(-180 230 230)"
-                            fill="url(#paint0_radial_1_33)"
-                          />
-                          <defs>
-                            <radialGradient
-                              id="paint0_radial_1_33"
-                              cx="0"
-                              cy="0"
-                              r="1"
-                              gradientUnits="userSpaceOnUse"
-                              gradientTransform="translate(345 230) rotate(90) scale(230 115)"
-                            >
-                              <stop stopColor="currentColor" />
-                              <stop
-                                offset="1"
-                                stopColor="currentColor"
-                                stopOpacity="0"
-                              />
-                            </radialGradient>
-                          </defs>
-                        </svg>
-                      )}
-                    </Link>
-                  </li>
-                );
-              })}
-          </ul>
-        </div>
-        <div
-          className={`absolute h-1 bg-gradient-to-r from-transparent ${
-            data.color === "primary" ? `via-white` : `via-black dark:via-white`
-          } to-transparent bottom-0 left-4 right-4 -z-1 opacity-5`}
-        />
-      </Container>
-    </div>
+                      <Link
+                        data-tina-field={tinaField(item, "label")}
+                        href={`/${item.href}`}
+                        className={`relative select-none	text-base inline-block tracking-wide transition duration-150 ease-out hover:opacity-100 py-8 px-4 ${
+                          activeItem ? `` : `opacity-70`
+                        }`}
+                      >
+                        {item.label}
+                        {activeItem && (
+                          <svg
+                            className={`absolute bottom-0 left-1/2 w-[180%] h-full -translate-x-1/2 -z-1 opacity-10 dark:opacity-15 ${
+                              activeBackgroundClasses[theme.color]
+                            }`}
+                            preserveAspectRatio="none"
+                            viewBox="0 0 230 230"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="230"
+                              y="230"
+                              width="230"
+                              height="230"
+                              transform="rotate(-180 230 230)"
+                              fill="url(#paint0_radial_1_33)"
+                            />
+                            <defs>
+                              <radialGradient
+                                id="paint0_radial_1_33"
+                                cx="0"
+                                cy="0"
+                                r="1"
+                                gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(345 230) rotate(90) scale(230 115)"
+                              >
+                                <stop stopColor="currentColor" />
+                                <stop
+                                  offset="1"
+                                  stopColor="currentColor"
+                                  stopOpacity="0"
+                                />
+                              </radialGradient>
+                            </defs>
+                          </svg>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+          <div
+            className={`absolute h-1 bg-gradient-to-r from-transparent ${
+              data.color === "primary"
+                ? `via-white`
+                : `via-black dark:via-white`
+            } to-transparent bottom-0 left-4 right-4 -z-1 opacity-5`}
+          />
+        </Container>
+      </div>
+    </>
   );
 };

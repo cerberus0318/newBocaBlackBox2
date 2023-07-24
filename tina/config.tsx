@@ -32,6 +32,134 @@ const config = defineConfig({
   schema: {
     collections: [
       {
+        label: "VenureLists",
+        name: "venure",
+        path: "content/venures",
+        format: "md",
+        fields: [
+          {
+            type: "string",
+            label: "Name",
+            name: "name",
+            isTitle: true,
+            required: true,
+          },
+        ],
+      },
+      {
+        label: "Languages",
+        name: "language",
+        path: "content/languages",
+        format: "md",
+        fields: [
+          {
+            type: "string",
+            label: "Language",
+            name: "name",
+            isTitle: true,
+            required: true,
+          },
+        ],
+      },
+      {
+        label: "Generes",
+        name: "genere",
+        path: "content/generes",
+        format: "md",
+        fields: [
+          {
+            type: "string",
+            label: "Genere",
+            name: "genere",
+            isTitle: true,
+            required: true,
+          },
+        ],
+      },
+      {
+        label: "Ratings",
+        name: "rating",
+        path: "content/ageratings",
+        format: "md",
+        fields: [
+          {
+            type: "string",
+            label: "Rating",
+            name: "rating",
+            isTitle: true,
+            required: true,
+          },
+        ],
+      },
+      {
+        label: "Events",
+        name: "event",
+        path: "content/events",
+        format: "mdx",
+        fields: [
+          {
+            type: "string",
+            label: "Title",
+            name: "title",
+            required: true,
+          },
+          {
+            type: "rich-text",
+            label: "Description",
+            name: "description",
+            required: true,
+          },
+          {
+            type: "image",
+            label: "Event Logo",
+            name: "event_image",
+            required: true,
+          },
+          {
+            type: "image",
+            label: "Feature Image",
+            name: "feature_image",
+          },
+          {
+            type: "string",
+            label: "Ticket Buy Link",
+            name: "tickt_link",
+          },
+          {
+            type: "datetime",
+            label: "Event Date",
+            name: "event_date",
+            ui: {
+              timeFormat: "HH:mm",
+            },
+          },
+          {
+            type: "reference",
+            label: "Venure",
+            name: "venure",
+            collections: ["venure"],
+          },
+          {
+            type: "reference",
+            label: "Language",
+            name: "language",
+            collections: ["language"],
+          },
+          {
+            type: "reference",
+            label: "Genere",
+            name: "genere",
+            collections: ["genere"],
+          },
+          {
+            type: "reference",
+            label: "Age Rating",
+            name: "rating",
+            collections: ["rating"],
+          },
+        ],
+      },
+      {
         label: "Blog Posts",
         name: "post",
         path: "content/posts",
@@ -162,6 +290,43 @@ const config = defineConfig({
               iconSchema as any,
               {
                 type: "string",
+                label: "BoxOffice",
+                name: "office",
+              },
+              {
+                type: "object",
+                label: "Social Links",
+                name: "social",
+                fields: [
+                  {
+                    type: "string",
+                    label: "Youtube Link",
+                    name: "youtube",
+                  },
+                  {
+                    type: "string",
+                    label: "MapLink",
+                    name: "map",
+                  },
+                  {
+                    type: "string",
+                    label: "Faceboook Link",
+                    name: "facebook",
+                  },
+                  {
+                    type: "string",
+                    label: "Instagram Link",
+                    name: "instagram",
+                  },
+                  {
+                    type: "string",
+                    label: "Email Link",
+                    name: "email",
+                  },
+                ],
+              },
+              {
+                type: "string",
                 label: "Name",
                 name: "name",
               },
@@ -172,6 +337,34 @@ const config = defineConfig({
                 options: [
                   { label: "Default", value: "default" },
                   { label: "Primary", value: "primary" },
+                ],
+              },
+              {
+                type: "object",
+                label: "Venure Types",
+                name: "venures",
+                list: true,
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.label };
+                  },
+                  defaultItem: {
+                    venure: "Town Hall Event Center",
+                    label: "Town Hall Event Center",
+                  },
+                },
+                fields: [
+                  {
+                    type: "reference",
+                    label: "Venure",
+                    name: "venure",
+                    collections: ["venure"],
+                  },
+                  {
+                    type: "string",
+                    label: "Label",
+                    name: "label",
+                  },
                 ],
               },
               {
@@ -198,6 +391,33 @@ const config = defineConfig({
                     type: "string",
                     label: "Label",
                     name: "label",
+                  },
+                  {
+                    type: "object",
+                    label: "Sub Navs",
+                    name: "subnav",
+                    list: true,
+                    ui: {
+                      itemProps: (item) => {
+                        return { label: item?.label };
+                      },
+                      defaultItem: {
+                        href: "home",
+                        label: "Home",
+                      },
+                    },
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Link",
+                        name: "href",
+                      },
+                      {
+                        type: "string",
+                        label: "Label",
+                        name: "label",
+                      },
+                    ],
                   },
                 ],
               },
