@@ -27,18 +27,34 @@ query contentQuery($relativePath: String!) {
   }
 }
 
-query pageQuery {
+query blogPostQuery($relativePath: String!) {
   ...LayoutQueryFragment
-  postConnection {
+  post(relativePath: $relativePath) {
+    ...PostParts
+    author {
+      ... on Author {
+        name
+        avatar
+      }
+    }
+  }
+}
+
+query eventQuery {
+  ...LayoutQueryFragment
+
+  eventConnection {
     edges {
       node {
         id
-        date
         title
-        excerpt
-        author {
-          ... on Author {
-            ...AuthorParts
+        event_image
+        feature_image
+        ticket_link
+        event_date
+        venure {
+          ... on Venure {
+            name
           }
         }
         _sys {
@@ -47,5 +63,5 @@ query pageQuery {
       }
     }
   }
-}
 
+}

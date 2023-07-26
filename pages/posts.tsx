@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { Posts } from "../components/posts";
@@ -10,6 +11,9 @@ export default function HomePage(
 ) {
   const posts = props.data.postConnection.edges;
 
+  useEffect(() => {
+    console.log("tinaProps,", props);
+  }, []);
   return (
     <Layout>
       <Section className="flex-1">
@@ -23,6 +27,7 @@ export default function HomePage(
 
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.pageQuery();
+
   return {
     props: {
       ...tinaProps,
