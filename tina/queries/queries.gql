@@ -40,8 +40,31 @@ query blogPostQuery($relativePath: String!) {
   }
 }
 
-query eventQuery {
+query eventQuery($relativePath: String!) {
   ...LayoutQueryFragment
+  event(relativePath: $relativePath) {
+    ...EventParts
+    venue {
+      ... on Venue {
+        name
+      }
+    }
+    language {
+      ... on Language {
+        name
+      }
+    }
+    # genere {
+    #   ... on Genere {
+    #     name
+    #   }
+    # }
+    # rating {
+    #   ... on AgeRating {
+    #     name
+    #   }
+    # }
+  }
 
   eventConnection {
     edges {
@@ -52,8 +75,8 @@ query eventQuery {
         feature_image
         ticket_link
         event_date
-        venure {
-          ... on Venure {
+        venue {
+          ... on Venue {
             name
           }
         }

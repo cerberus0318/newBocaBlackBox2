@@ -19,7 +19,7 @@ export default function HomePage(
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.contentQuery({
-    relativePath: `${params.filename}.md`,
+    relativePath: `${params.slug}.md`,
   });
   const props = {
     ...tinaProps,
@@ -32,9 +32,11 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const pagesListData = await client.queries.pageConnection();
+  console.log("pagesListData");
+  console.log(pagesListData);
   return {
     paths: pagesListData.data.pageConnection?.edges?.map((page) => ({
-      params: { filename: page?.node?._sys.filename },
+      params: { slug: page?.node?._sys.filename },
     })),
     fallback: false,
   };

@@ -1,4 +1,4 @@
-export * from "./venure";
+export * from "./venue";
 export * from "./language";
 export * from "./genere";
 export * from "./age-restriction";

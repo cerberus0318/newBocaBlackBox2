@@ -1,6 +1,13 @@
 ---
 title: About
 blocks:
+  - header_line: Contact Us
+    tag_line: BOCA BLACK BOX CENTER FOR THE ARTS
+    address: '8221 Glades Road #10 Boca Raton, FL 33434'
+    phone: 561.483.9036
+    fax: 561.451.2456
+    email: bocablackbox@gmail.com
+    _template: contact
   - header_line1: Performances
     seating_image1: /uploads/performance.png
     header_line2: Wrestling Matches
@@ -11,25 +18,6 @@ blocks:
     avatar1: /uploads/feature1.jpg
     avatar2: /uploads/feature2.jpg
     _template: boxOfficeInfo
-  - header_line: Group Tickets
-    tickets:
-      - title: Group Ticket1
-        description: >
-          Group Ticket1Group Ticket1Group Ticket1Group Ticket1Group Ticket1Group
-          Ticket1
-        event_image: /uploads/micheleWebsiteImage.jpg
-        event_date: 2023-08-18T16:15:00.000Z
-        venure: content/venures/Boca-Black-Box.md
-        language: content/languages/English.md
-        genere: content/generes/Comedy.md
-        rating: content/ageratings/13-Mature-Audiences.md
-    _template: group_ticket
-  - header_line: Meet Team
-    team_member:
-      - name: Fong Jun De
-        position: Frontend Developer
-        avatar: /uploads/10.png
-    _template: meet_team
   - items:
       - icon:
           name: ''
@@ -57,6 +45,7 @@ blocks:
           filler text.
     _template: features
 ---
+
 
 
 

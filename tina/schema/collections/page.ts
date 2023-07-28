@@ -7,6 +7,9 @@ import { meetTeamBlockSchema } from "../block/meet-team";
 import { groupTicketBlockSchema } from "../block/group-ticket";
 import { boxOfficeInformationBlockSchema } from "../block/box-office-information";
 import { seatingChartBlockSchema } from "../block/seating-chart";
+import { contactBlockSchema } from "../block/contact";
+import { galleryBlockSchema } from "../block/gallery";
+import { eventViewBlockSchema } from "../block/eventview";
 
 const PageSchema: Collection = {
   label: "Pages",
@@ -50,7 +53,10 @@ const PageSchema: Collection = {
         meetTeamBlockSchema,
         groupTicketBlockSchema,
         boxOfficeInformationBlockSchema,
-        seatingChartBlockSchema
+        seatingChartBlockSchema,
+        contactBlockSchema,
+        galleryBlockSchema,
+        eventViewBlockSchema
       ],
     },
   ],

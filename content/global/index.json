@@ -15,47 +15,47 @@
     },
     "name": "Tina Starter",
     "color": "default",
-    "venures": [
+    "venues": [
       {
-        "venure": "content/venures/Boca-Black-Box.md",
+        "venue": "content/venues/Boca-Black-Box.md",
         "label": "Boca Black Box"
       },
       {
-        "venure": "content/venures/Box-20.md",
+        "venue": "content/venues/Box-20.md",
         "label": "Box 2.0"
       },
       {
-        "venure": "content/venures/Town-Hall-Event-Center.md",
+        "venue": "content/venues/Town-Hall-Event-Center.md",
         "label": "Town Hall Event Center"
       }
     ],
     "nav": [
       {
-        "href": "home",
+        "href": "/home",
         "label": "Home"
       },
       {
-        "href": "about",
+        "href": "/about",
         "label": "About",
         "subnav": [
           {
-            "href": "about/meet-team",
+            "href": "/about/meet-team",
             "label": "Meet The Team"
           },
           {
-            "href": "about/group-tickets",
+            "href": "/about/group-tickets",
             "label": "Group Tickets"
           },
           {
-            "href": "about/box-office-info",
+            "href": "/about/box-office-info",
             "label": "Box Office Information"
           },
           {
-            "href": "about/seating-chart",
+            "href": "/about/seating-chart",
             "label": "Seating Chart"
           },
           {
-            "href": "about/subscription",
+            "href": "/about/subscription",
             "label": "Subscription"
           }
         ]
@@ -75,27 +75,27 @@
         ]
       },
       {
-        "href": "gallery",
+        "href": "/gallery",
         "label": "Gallery"
       },
       {
-        "href": "contact",
+        "href": "/contact",
         "label": "Contact"
       },
       {
-        "href": "opportunity",
+        "href": "/opportunity",
         "label": "Opportunity",
         "subnav": [
           {
-            "href": "opportunity/sponsorship",
+            "href": "/opportunity/sponsorship",
             "label": "Sponsorship"
           },
           {
-            "href": "opportunity/donation",
+            "href": "/opportunity/donation",
             "label": "Donation"
           },
           {
-            "href": "opportunity/buy-seat",
+            "href": "/opportunity/buy-seat",
             "label": "Buy a Seat"
           }
         ]
@@ -105,15 +105,15 @@
         "label": "Submission",
         "subnav": [
           {
-            "href": "submission/performance",
+            "href": "/submission/performance-submission",
             "label": "Performance Submissions"
           },
           {
-            "href": "submission/rental",
+            "href": "/submission/rental-submission",
             "label": "Rental Submissions"
           },
           {
-            "href": "submission/employment",
+            "href": "/submission/employment-submission",
             "label": "Employment Submissions "
           }
         ]
@@ -130,7 +130,7 @@
     },
     "nav": [
       {
-        "href": "home",
+        "href": "/home",
         "label": "Home"
       },
       {
@@ -138,23 +138,23 @@
         "label": "About",
         "subnav": [
           {
-            "href": "about/meet-team",
+            "href": "/about/meet-team",
             "label": "Meet The Team"
           },
           {
-            "href": "about/group-tickets",
+            "href": "/about/group-tickets",
             "label": "Group Tickets"
           },
           {
-            "href": "about/box-office-info",
+            "href": "/about/box-office-info",
             "label": "Box Office Information"
           },
           {
-            "href": "about/seating-chart",
+            "href": "/about/seating-chart",
             "label": "Seating Chart"
           },
           {
-            "href": "about/subscription",
+            "href": "/about/subscription",
             "label": "Subscription"
           }
         ]
@@ -168,17 +168,17 @@
             "label": "Calendar"
           },
           {
-            "href": "ticket/events-by-venue",
+            "href": "/ticket/events-by-venue",
             "label": "Events by Venue "
           }
         ]
       },
       {
-        "href": "gallery",
+        "href": "/gallery",
         "label": "Gallery"
       },
       {
-        "href": "contact",
+        "href": "/contact",
         "label": "Contact"
       },
       {
@@ -186,15 +186,15 @@
         "label": "Opportunity",
         "subnav": [
           {
-            "href": "opportunity/sponsorship",
+            "href": "/opportunity/sponsorship",
             "label": "Sponsorship"
           },
           {
-            "href": "opportunity/donation",
+            "href": "/opportunity/donation",
             "label": "Donation"
           },
           {
-            "href": "opportunity/buy-seat",
+            "href": "/opportunity/buy-seat",
             "label": "Buy a Seat"
           }
         ]
@@ -204,15 +204,15 @@
         "label": "Submission",
         "subnav": [
           {
-            "href": "submission/performance",
+            "href": "/submission/performance-submission",
             "label": "Performance Submissions"
           },
           {
-            "href": "submission/rental",
+            "href": "/submission/rental-submission",
             "label": "Rental Submissions"
           },
           {
-            "href": "submission/employment",
+            "href": "/submission/employment-submission",
             "label": "Employment Submissions "
           }
         ]

@@ -1,9 +1,9 @@
 import { type Collection } from "tinacms";
 
-const VenureCollection: Collection = {
-  label: "VenureLists",
-  name: "venure",
-  path: "content/venures",
+const VenueCollection: Collection = {
+  label: "VenueLists",
+  name: "venue",
+  path: "content/venues",
   format: "md",
   fields: [
     {
@@ -16,4 +16,4 @@ const VenureCollection: Collection = {
   ],
 };
 
-export { VenureCollection };
+export { VenueCollection };

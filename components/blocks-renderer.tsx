@@ -8,6 +8,9 @@ import { GroupTickets } from "./blocks/About/groupTicket";
 import { tinaField } from "tinacms/dist/react";
 import { BoxOfficeInfo } from "./blocks/About/boxOfficeInformation";
 import { SeatingChart } from "./blocks/About/seatingChart";
+import { Contact } from "./blocks/Contact/contact";
+import { Gallery } from "./blocks/Gallery/gallery";
+import { EventView } from "./blocks/Ticket/eventView";
 
 export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   return (
@@ -37,6 +40,12 @@ const Block = (block: PageBlocks) => {
       return <BoxOfficeInfo data={block} />;
     case "PageBlocksSeatingChart":
       return <SeatingChart data={block} />;
+    case "PageBlocksContact":
+      return <Contact data={block} />;
+    case "PageBlocksGallery":
+      return <Gallery data={block} />;
+    case "PageBlocksEventview":
+      return <EventView data={block} />;
     case "PageBlocksHero":
       return <Hero data={block} />;
     case "PageBlocksFeatures":

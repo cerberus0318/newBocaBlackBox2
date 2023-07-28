@@ -5,6 +5,11 @@ const EventSchema: Collection = {
   name: "event",
   path: "content/events",
   format: "mdx",
+  ui: {
+    router: ({ document }) => {
+      return `/events/${document._sys.filename}`;
+    },
+  },
   fields: [
     {
       type: "string",
@@ -47,9 +52,9 @@ const EventSchema: Collection = {
     },
     {
       type: "reference",
-      label: "Venure",
-      name: "venure",
-      collections: ["venure"],
+      label: "Venue",
+      name: "venue",
+      collections: ["venue"],
       required: true,
     },
     {

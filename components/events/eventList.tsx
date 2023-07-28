@@ -1,3 +1,4 @@
+import Link from "next/link";
 const EventList = (props: any) => {
   const convertDateFormat = (date: string) => {
     const newDate = new Date(date);
@@ -32,11 +33,14 @@ const EventList = (props: any) => {
             {convertDateFormat(props?.event?.node?.event_date)}
           </p>
           <p className="text-sm font-bold pt-2 text-red-700 italic">
-            Venue: {props?.event?.node?.venure?.name}
+            Venue: {props?.event?.node?.venue?.name}
           </p>
-          <button className="mt-2 bg-red-900 text-gray-200 hover:text-white text-md font-bold py-2 px-6 rounded-md hover:bg-red-800">
+          <Link
+            href={"/events/" + props?.event?.node._sys.filename}
+            className="mt-2 bg-red-900 text-gray-200 hover:text-white text-md font-bold py-2 px-6 rounded-md hover:bg-red-800"
+          >
             Info & Ticket
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { useEffect } from "react";
+
 const EventCard = (props: any) => {
   const convertDateFormat = (date: string) => {
     const newDate = new Date(date);
@@ -32,14 +35,17 @@ const EventCard = (props: any) => {
             {convertDateFormat(props?.event?.node?.event_date)}
           </p>
           <p className="text-sm font-bold pt-2 text-red-700 italic">
-            Venue: {props?.event?.node?.venure?.name}
+            Venue: {props?.event?.node?.venue?.name}
           </p>
         </div>
       </div>
       <div className="absolute w-full h-full flex justify-center top-0 items-center opacity-0 hover:opacity-100 transition-opacity duration-500 bg-black/60">
-        <button className="bg-red-900 text-gray-200 hover:text-white text-md font-bold py-2 px-6 rounded-md hover:bg-red-800">
+        <Link
+          href={"/events/" + props?.event?.node._sys.filename}
+          className="bg-red-900 text-gray-200 hover:text-white text-md font-bold py-2 px-6 rounded-md hover:bg-red-800"
+        >
           Info & Ticket
-        </button>
+        </Link>
       </div>
     </div>
   );

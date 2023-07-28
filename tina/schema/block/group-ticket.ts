@@ -55,9 +55,9 @@ export const groupTicketBlockSchema: Template = {
         },
         {
           type: "reference",
-          label: "Venure",
-          name: "venure",
-          collections: ["venure"],
+          label: "Venue",
+          name: "venue",
+          collections: ["venue"],
         },
         {
           type: "reference",

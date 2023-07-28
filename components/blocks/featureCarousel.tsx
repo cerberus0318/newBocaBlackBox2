@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/router";
 import { Pagination, Autoplay } from "swiper/modules";
 
 import { client } from "../../tina/__generated__/client";
@@ -9,11 +10,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const FeatureCarousel = () => {
+  const router = useRouter();
+
   const [carouselData, setCarouselData] = useState([]);
 
   useEffect(() => {
     const getFeatureCarouselData = async () => {
-      const eventProps = await client.queries.eventQuery();
+      const eventProps = await client.queries.eventConnection();
       const eventData = eventProps.data.eventConnection.edges;
       const featureCarouselData = eventData.filter((event) => {
         return Boolean(event.node.feature_image);
@@ -24,7 +27,7 @@ const FeatureCarousel = () => {
   }, []);
 
   const navigateDetail = (title) => {
-    console.log(title);
+    router.push("/events/" + title);
   };
 
   return (
@@ -32,7 +35,7 @@ const FeatureCarousel = () => {
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       speed={500}
       loop={true}
-      pagination={{clickable: true}}
+      pagination={{ clickable: true }}
       modules={[Pagination, Autoplay]}
     >
       {carouselData.map((carousel, index) => (
@@ -49,7 +52,6 @@ const FeatureCarousel = () => {
               className="h-[450px] object-cover overflow-clip"
             />
           </div>
-
         </SwiperSlide>
       ))}
     </Swiper>

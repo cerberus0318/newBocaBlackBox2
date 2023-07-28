@@ -3,7 +3,6 @@ import { Container } from "../../util/container";
 import { Section } from "../../util/section";
 import { PageBlocksSeatingChart } from "../../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const SeatingChart = ({ data }: { data: PageBlocksSeatingChart }) => {
   return (

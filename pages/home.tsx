@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { client } from "../tina/__generated__/client";
 import { Layout } from "../components/layout";
 import { InferGetStaticPropsType } from "next";
@@ -10,9 +9,6 @@ export default function HomePage(
 ) {
   const events = props.data.eventConnection.edges;
 
-  useEffect(() => {
-    console.log("tinaProps,", props);
-  }, []);
   return (
     <Layout>
       <div className="w-full">
@@ -26,7 +22,7 @@ export default function HomePage(
 }
 
 export const getStaticProps = async () => {
-  const eventProps = await client.queries.eventQuery();
+  const eventProps = await client.queries.eventConnection();
 
   return {
     props: {

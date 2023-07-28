@@ -49,3 +49,20 @@
 .event-card:hover .detail-button {
   transform: translateY(0);
 }
+
+.gallery .images {
+  gap: 15px;
+  columns: 4 200px;
+  max-width: 95%;
+}
+
+.images .card {
+  list-style: none;
+  margin-bottom: 14px;
+  border-radius: 4px;
+}
+
+.images img {
+  width: 100%;
+  border-radius: 4px;
+}

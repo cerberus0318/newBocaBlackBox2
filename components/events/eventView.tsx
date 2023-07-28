@@ -10,33 +10,33 @@ import { FaListUl } from "react-icons/fa";
 import client from "../../tina/__generated__/client";
 
 const EventView = ({ data }: { data: EventsType[] }) => {
-  const [venureTypes, setVenureTypes] = useState([]);
-  const [selectedVenure, setSelectedVenure] = useState("");
+  const [venueTypes, setVenueTypes] = useState([]);
+  const [selectedVenue, setSelectedVenue] = useState("");
   const [isShowMore, setIsShowMore] = useState(false);
   const [showingData, setShowingData] = useState([]);
   const [viewMode, setViewMode] = useState(0);
 
   useEffect(() => {
     const getVenueType = async () => {
-      const venureData = await client.queries.venureConnection();
-      const venures = venureData.data.venureConnection.edges;
-      setVenureTypes(venures);
+      const venueData = await client.queries.venueConnection();
+      const venues = venueData.data.venueConnection.edges;
+      setVenueTypes(venues);
     };
     getVenueType();
   }, []);
 
   useEffect(() => {
     let filterData = [];
-    if (selectedVenure !== "") {
+    if (selectedVenue !== "") {
       filterData = data.filter((event) => {
-        return event.node?.venure?.name === selectedVenure;
+        return event.node?.venue?.name === selectedVenue;
       });
     } else filterData = data;
 
     if (isShowMore && filterData.length > 8)
       setShowingData(filterData.slice(0, 8));
     else setShowingData(filterData);
-  }, [isShowMore, selectedVenure]);
+  }, [isShowMore, selectedVenue]);
 
   const changeViewMode = () => {
     if (viewMode === 0) setViewMode(1);
@@ -50,13 +50,13 @@ const EventView = ({ data }: { data: EventsType[] }) => {
         <button className="bg-red-900 text-gray-200 hover:text-white py-2 px-6 rounded-md hover:-translate-y-1 transition-all delay-50 hover:bg-red-800">
           Calendar
         </button>
-        {venureTypes.map((venure, index) => (
+        {venueTypes.map((venue, index) => (
           <button
-            onClick={() => setSelectedVenure(venure.node.name)}
+            onClick={() => setSelectedVenue(venue.node.name)}
             className="bg-red-900 text-gray-200 hover:text-white py-2 px-6 rounded-md hover:-translate-y-1 transition-all delay-50 hover:bg-red-800"
             key={index}
           >
-            {venure.node.name}
+            {venue.node.name}
           </button>
         ))}
         <button

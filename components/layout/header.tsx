@@ -118,8 +118,8 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
         <Container size="custom" className="py-6 relative z-10 max-w-8xl">
           <div className="flex items-center justify-between gap-6">
             <div className="flex gap-2 sm:gap-4 lg:gap-2">
-              {data.venures &&
-                data.venures.map((item, i) => {
+              {data.venues &&
+                data.venues.map((item, i) => {
                   return (
                     <button
                       key={item.label + i}

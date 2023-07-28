@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/router";
 import { Pagination, Autoplay, Thumbs } from "swiper/modules";
 import { EventsType } from "../../pages/home";
 
@@ -7,8 +8,10 @@ import "swiper/css/pagination";
 
 const MultiCarousel = ({ data }: { data: EventsType[] }) => {
 
+  const router = useRouter();
+
   const navigateDetail = (title) => {
-    console.log(title);
+    router.push("/events/" + title);
   };
 
   return (
