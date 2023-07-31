@@ -70,34 +70,6 @@ const GlobalSchema: Collection = {
         },
         {
           type: "object",
-          label: "Venue Types",
-          name: "venues",
-          list: true,
-          ui: {
-            itemProps: (item) => {
-              return { label: item?.label };
-            },
-            defaultItem: {
-              venue: "Town Hall Event Center",
-              label: "Town Hall Event Center",
-            },
-          },
-          fields: [
-            {
-              type: "reference",
-              label: "Venue",
-              name: "venue",
-              collections: ["venue"],
-            },
-            {
-              type: "string",
-              label: "Label",
-              name: "label",
-            },
-          ],
-        },
-        {
-          type: "object",
           label: "Nav Links",
           name: "nav",
           list: true,

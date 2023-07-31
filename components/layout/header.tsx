@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import client from "../../tina/__generated__/client";
 import { Container } from "../util/container";
 import { useTheme } from ".";
 
@@ -19,6 +20,16 @@ import DropDownMenu from "./dropdown";
 export const Header = ({ data }: { data: GlobalHeader }) => {
   const router = useRouter();
   const theme = useTheme();
+  const [venueTypes, setVenueTypes] = useState([]);
+
+  useEffect(() => {
+    const getVenueType = async () => {
+      const venueData = await client.queries.venueConnection();
+      const venues = venueData.data.venueConnection.edges;
+      setVenueTypes(venues);
+    };
+    getVenueType();
+  }, []);
 
   const headerColor = {
     default:
@@ -112,12 +123,17 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
         <Container size="custom" className="py-6 relative z-10 max-w-8xl">
           <div className="flex items-center justify-between gap-6">
             <div className="flex gap-2 sm:gap-4 lg:gap-2">
-              {data.venues &&
-                data.venues.map((item, i) => {
+              {venueTypes &&
+                venueTypes.map((item, i) => {
                   return (
                     <button
                       key={item.label + i}
-                      onClick={() => router.push("/home/" + item.venue.slice(15).slice(0, -3))}
+                      onClick={() =>
+                        router.push(
+                          "/home/" +
+                            item.venue.toString().slice(15).slice(0, -3)
+                        )
+                      }
                       className="bg-red-900 text-white py-2 px-6 rounded-md hover:bg-red-800"
                     >
                       {item.label}

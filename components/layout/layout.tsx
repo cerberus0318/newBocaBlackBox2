@@ -54,9 +54,7 @@ export const Layout = ({
             {children}
           </div>
           <Footer
-            rawData={rawData}
             data={data?.footer}
-            icon={data?.header.icon}
           />
         </div>
       </Theme>

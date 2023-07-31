@@ -51,7 +51,7 @@ export default function EventDetail(
   };
 
   return (
-    <Layout rawData={data} data={data.global as any}>
+    <Layout data={data.global as any}>
       <Container className="w-full">
         <div className="text-left text-white text-2xl font-bold py-2 w-full border-b border-white">
           <h1>{data.event.title}</h1>
