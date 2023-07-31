@@ -1,0 +1,98 @@
+query pageQuery {
+  ...LayoutQueryFragment
+  postConnection {
+    edges {
+      node {
+        id
+        date
+        title
+        excerpt
+        author {
+          ... on Author {
+            ...AuthorParts
+          }
+        }
+        _sys {
+          filename
+        }
+      }
+    }
+  }
+}
+
+query contentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  page(relativePath: $relativePath) {
+    ...PageParts
+  }
+}
+
+query venueQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  venue(relativePath: $relativePath) {
+    ...VenueParts
+  }
+}
+
+query blogPostQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  post(relativePath: $relativePath) {
+    ...PostParts
+    author {
+      ... on Author {
+        name
+        avatar
+      }
+    }
+  }
+}
+
+query eventQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  event(relativePath: $relativePath) {
+    ...EventParts
+    venue {
+      ... on Venue {
+        name
+      }
+    }
+    language {
+      ... on Language {
+        name
+      }
+    }
+    # genere {
+    #   ... on Genere {
+    #     name
+    #   }
+    # }
+    # rating {
+    #   ... on AgeRating {
+    #     name
+    #   }
+    # }
+  }
+
+  eventConnection {
+    edges {
+      node {
+        id
+        title
+        event_image
+        feature_image
+        event_info {
+          event_date
+          ticket_link
+        }
+        venue {
+          ... on Venue {
+            name
+          }
+        }
+        _sys {
+          filename
+        }
+      }
+    }
+  }
+}

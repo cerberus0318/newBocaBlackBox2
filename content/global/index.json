@@ -1,0 +1,234 @@
+{
+  "header": {
+    "icon": {
+      "name": "Tina",
+      "color": "orange",
+      "style": "float"
+    },
+    "office": "561.483.9036",
+    "social": {
+      "youtube": "/",
+      "map": "/",
+      "facebook": "/",
+      "instagram": "/",
+      "email": "/"
+    },
+    "name": "Tina Starter",
+    "color": "default",
+    "venues": [
+      {
+        "venue": "content/venues/Boca-Black-Box.md",
+        "label": "Boca Black Box"
+      },
+      {
+        "venue": "content/venues/Box-20.md",
+        "label": "Box 2.0"
+      },
+      {
+        "venue": "content/venues/Town-Hall-Event-Center.md",
+        "label": "Town Hall Event Center"
+      }
+    ],
+    "nav": [
+      {
+        "href": "/home",
+        "label": "Home"
+      },
+      {
+        "href": "/about",
+        "label": "About",
+        "subnav": [
+          {
+            "href": "/about/meet-team",
+            "label": "Meet The Team"
+          },
+          {
+            "href": "/about/group-tickets",
+            "label": "Group Tickets"
+          },
+          {
+            "href": "/about/box-office-info",
+            "label": "Box Office Information"
+          },
+          {
+            "href": "/about/seating-chart",
+            "label": "Seating Chart"
+          },
+          {
+            "href": "/about/subscription",
+            "label": "Subscription"
+          }
+        ]
+      },
+      {
+        "href": "ticket",
+        "label": "Tickets",
+        "subnav": [
+          {
+            "href": "/ticket/calendar",
+            "label": "Calendar"
+          },
+          {
+            "href": "/ticket/events-by-venue",
+            "label": "Events by Venue "
+          }
+        ]
+      },
+      {
+        "href": "/gallery",
+        "label": "Gallery"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact"
+      },
+      {
+        "href": "/opportunity",
+        "label": "Opportunity",
+        "subnav": [
+          {
+            "href": "/opportunity/sponsorship",
+            "label": "Sponsorship"
+          },
+          {
+            "href": "/opportunity/donation",
+            "label": "Donation"
+          },
+          {
+            "href": "/opportunity/buy-seat",
+            "label": "Buy a Seat"
+          }
+        ]
+      },
+      {
+        "href": "submission",
+        "label": "Submission",
+        "subnav": [
+          {
+            "href": "/submission/performance-submission",
+            "label": "Performance Submissions"
+          },
+          {
+            "href": "/submission/rental-submission",
+            "label": "Rental Submissions"
+          },
+          {
+            "href": "/submission/employment-submission",
+            "label": "Employment Submissions "
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "logo": "/uploads/boca-logo.png",
+    "social": {
+      "facebook": "/",
+      "twitter": "/",
+      "email": "/",
+      "instagram": "/"
+    },
+    "nav": [
+      {
+        "href": "/home",
+        "label": "Home"
+      },
+      {
+        "href": "about",
+        "label": "About",
+        "subnav": [
+          {
+            "href": "/about/meet-team",
+            "label": "Meet The Team"
+          },
+          {
+            "href": "/about/group-tickets",
+            "label": "Group Tickets"
+          },
+          {
+            "href": "/about/box-office-info",
+            "label": "Box Office Information"
+          },
+          {
+            "href": "/about/seating-chart",
+            "label": "Seating Chart"
+          },
+          {
+            "href": "/about/subscription",
+            "label": "Subscription"
+          }
+        ]
+      },
+      {
+        "href": "ticket",
+        "label": "Tickets",
+        "subnav": [
+          {
+            "href": "ticket/calendar",
+            "label": "Calendar"
+          },
+          {
+            "href": "/ticket/events-by-venue",
+            "label": "Events by Venue "
+          }
+        ]
+      },
+      {
+        "href": "/gallery",
+        "label": "Gallery"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact"
+      },
+      {
+        "href": "opportunity",
+        "label": "Opportunity",
+        "subnav": [
+          {
+            "href": "/opportunity/sponsorship",
+            "label": "Sponsorship"
+          },
+          {
+            "href": "/opportunity/donation",
+            "label": "Donation"
+          },
+          {
+            "href": "/opportunity/buy-seat",
+            "label": "Buy a Seat"
+          }
+        ]
+      },
+      {
+        "href": "submission",
+        "label": "Submission",
+        "subnav": [
+          {
+            "href": "/submission/performance-submission",
+            "label": "Performance Submissions"
+          },
+          {
+            "href": "/submission/rental-submission",
+            "label": "Rental Submissions"
+          },
+          {
+            "href": "/submission/employment-submission",
+            "label": "Employment Submissions "
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "email": "bocablackbox@gmail.com",
+      "contact": "561.483.9036",
+      "fax": "561.451.2456",
+      "address": "Boca Black Box Center for the Arts, 8221 Glades Road #10 Boca Raton, Florida 33434"
+    },
+    "color": "default"
+  },
+  "theme": {
+    "color": "blue",
+    "font": "sans",
+    "darkMode": "system"
+  }
+}
