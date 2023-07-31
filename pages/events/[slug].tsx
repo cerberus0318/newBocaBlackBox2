@@ -4,7 +4,6 @@ import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
-  Pagination,
   Autoplay,
   FreeMode,
   Navigation,
@@ -15,8 +14,6 @@ import { Layout } from "../../components/layout";
 import { client } from "../../tina/__generated__/client";
 import { Container } from "../../components/util/container";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-
 
 export default function EventDetail(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -41,8 +38,8 @@ export default function EventDetail(
     const month = newDate.toLocaleString("default", { month: "long" });
     const day = newDate.getDate();
     const year = newDate.getFullYear();
-    let hour = newDate.getHours();
-    let minute = newDate.getMinutes();
+    const hour = newDate.getHours();
+    const minute = newDate.getMinutes();
 
     const shortMonthString = month;
     const formattedHour = hour.toString().padStart(2, "0");

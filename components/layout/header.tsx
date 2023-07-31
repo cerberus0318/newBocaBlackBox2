@@ -39,11 +39,6 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
     data.color === "primary"
       ? headerColor.primary[theme.color]
       : headerColor.default;
-  
-  const [isClient, setIsClient] = React.useState(false);
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   return (
     <>
@@ -122,7 +117,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                   return (
                     <button
                       key={item.label + i}
-                      onClick={e => router.push("/home/" + item.venue.slice(15).slice(0, -3))}
+                      onClick={() => router.push("/home/" + item.venue.slice(15).slice(0, -3))}
                       className="bg-red-900 text-white py-2 px-6 rounded-md hover:bg-red-800"
                     >
                       {item.label}
@@ -133,10 +128,6 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
             <ul className="flex gap-2 sm:gap-4 lg:gap-2 tracking-[.002em] -mx-4">
               {data.nav &&
                 data.nav.map((item, i) => {
-                  const activeItem =
-                    (item.href === ""
-                      ? router.asPath === "/"
-                      : router.asPath.includes(item.href)) && isClient;
                   return <DropDownMenu key={item.label + i} menuItem={item} />;
                 })}
             </ul>

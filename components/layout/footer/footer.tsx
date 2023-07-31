@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
@@ -9,13 +8,8 @@ import DropDownMenu from "./dropdown";
 import { Container } from "../../util/container";
 import { useTheme } from "..";
 
-export const Footer = ({ data, icon, rawData }) => {
-  const router = useRouter();
+export const Footer = ({ data }) => {
   const theme = useTheme();
-  const [isClient, setIsClient] = React.useState(false);
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const footerColor = {
     default:
@@ -51,10 +45,6 @@ export const Footer = ({ data, icon, rawData }) => {
           <ul className="col-span-4 md:col-span-2 lg:col-span-1 flex flex-col gap-2">
             {data.nav &&
               data.nav.map((item, i) => {
-                const activeItem =
-                  (item.href === ""
-                    ? router.asPath === "/"
-                    : router.asPath.includes(item.href)) && isClient;
                 return <DropDownMenu key={item.label + i} menuItem={item} />;
               })}
           </ul>

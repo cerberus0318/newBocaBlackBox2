@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { client } from "../../tina/__generated__/client";
 import { Layout } from "../../components/layout";
 import { InferGetStaticPropsType } from "next";
-import { useRouter } from "next/router";
 import MultiCarousel from "../../components/events/multiCarousel";
 import EventView from "../../components/events/eventView";
 import FeatureCarousel from "../../components/blocks/featureCarousel";
@@ -10,7 +9,6 @@ import FeatureCarousel from "../../components/blocks/featureCarousel";
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const router = useRouter();
   const [events, setEvents] = useState([]);
 
   useEffect(() => {

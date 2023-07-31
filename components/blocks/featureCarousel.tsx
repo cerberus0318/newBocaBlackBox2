@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Thumbs } from "swiper/modules";
 
 import { client } from "../../tina/__generated__/client";
 import { tinaField } from "tinacms/dist/react";
@@ -37,7 +37,7 @@ const FeatureCarousel = () => {
         speed={500}
         loop={true}
         pagination={{ clickable: true }}
-        modules={[Pagination, Autoplay]}
+        modules={[Pagination, Autoplay, Thumbs]}
       >
         {carouselData.map((carousel, index) => (
           <SwiperSlide

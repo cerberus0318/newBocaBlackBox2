@@ -10,8 +10,8 @@ export const GroupTickets = ({ data }: { data: PageBlocksGroup_Ticket }) => {
     const month = newDate.toLocaleString("default", { month: "short" });
     const day = newDate.getDate();
     const year = newDate.getFullYear();
-    let hour = newDate.getHours();
-    let minute = newDate.getMinutes();
+    const hour = newDate.getHours();
+    const minute = newDate.getMinutes();
 
     const shortMonthString = month;
     const formattedHour = hour.toString().padStart(2, "0");

@@ -57,8 +57,8 @@ const CalendarView = () => {
   }, []);
 
   useEffect(() => {
-    let events = [];
-    filteredEventsData?.forEach((filteredEvent, index) => {
+    const events = [];
+    filteredEventsData?.forEach((filteredEvent) => {
       filteredEvent?.node?.event_info?.forEach((eventInfo) => {
         events.push({
           title: filteredEvent?.node?.title,

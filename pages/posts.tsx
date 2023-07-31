@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { Posts } from "../components/posts";
