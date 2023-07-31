@@ -1,6 +1,8 @@
 ---
 title: Group Tickets
 blocks:
+  - header_line: featureCarousel
+    _template: featureCarousel
   - header_line: Group Tickets
     tickets:
       - title: COMEDIAN RICK ALLEN @ THE BOX 2.0
@@ -69,5 +71,6 @@ blocks:
         rating: content/ageratings/13-Mature-Audiences.md
     _template: group_ticket
 ---
+
 
 

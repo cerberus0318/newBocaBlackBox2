@@ -9,9 +9,9 @@ import { FaListUl } from "react-icons/fa";
 
 import client from "../../tina/__generated__/client";
 
-const EventView = ({ data }: { data: EventsType[] }) => {
+const EventView = ({ data, venue }: { data: EventsType[], venue: string }) => {
   const [venueTypes, setVenueTypes] = useState([]);
-  const [selectedVenue, setSelectedVenue] = useState("");
+  const [selectedVenue, setSelectedVenue] = useState(venue);
   const [isShowMore, setIsShowMore] = useState(false);
   const [showingData, setShowingData] = useState([]);
   const [viewMode, setViewMode] = useState(0);
@@ -27,6 +27,7 @@ const EventView = ({ data }: { data: EventsType[] }) => {
 
   useEffect(() => {
     let filterData = [];
+    console.log(data);
     if (selectedVenue !== "") {
       filterData = data.filter((event) => {
         return event.node?.venue?.name === selectedVenue;
@@ -36,7 +37,7 @@ const EventView = ({ data }: { data: EventsType[] }) => {
     if (isShowMore && filterData.length > 8)
       setShowingData(filterData.slice(0, 8));
     else setShowingData(filterData);
-  }, [isShowMore, selectedVenue]);
+  }, [isShowMore, selectedVenue, data]);
 
   const changeViewMode = () => {
     if (viewMode === 0) setViewMode(1);

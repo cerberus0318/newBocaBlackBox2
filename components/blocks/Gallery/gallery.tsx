@@ -17,8 +17,10 @@ export const Gallery = ({ data }: { data: PageBlocksGallery }) => {
         <div className="gallery">
           <ul className="images" data-tina-field={tinaField(data, "gallery")}>
             {data?.gallery?.map((image, index) => (
-              <li className="card" key={index}>
+              <li className="card relative border border-white rounded-md hover:cursor-pointer" key={index}>
                 <img src={image} alt="gallery image" />
+                <div className="absolute w-full h-full flex justify-center top-0 items-center opacity-0 hover:opacity-100 transition-opacity duration-500 bg-black/60">
+                </div>
               </li>
             ))}
           </ul>

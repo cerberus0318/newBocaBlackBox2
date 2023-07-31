@@ -21,7 +21,7 @@ const EventList = (props: any) => {
     <div className="w-full border border-red-900 rounded-sm relative flex">
       <div className="h-[250px]">
         <img
-          src={props?.event?.node?.event_image}
+          src={props?.event?.node?.event_image[0]}
           alt={props?.event?.node?.title}
           className="h-full w-[250px] object-cover"
         />
@@ -30,14 +30,14 @@ const EventList = (props: any) => {
         <div className="text-center w-full">
           <h1 className="text-md font-bold">{props?.event?.node?.title}</h1>
           <p className="text-sm font-bold italic">
-            {convertDateFormat(props?.event?.node?.event_date)}
+          {convertDateFormat(props?.event?.node?.event_info[0].event_date)}
           </p>
-          <p className="text-sm font-bold pt-2 text-red-700 italic">
+          <p className="text-sm font-bold pt-2 text-red-700 italic mb-4">
             Venue: {props?.event?.node?.venue?.name}
           </p>
           <Link
             href={"/events/" + props?.event?.node._sys.filename}
-            className="mt-2 bg-red-900 text-gray-200 hover:text-white text-md font-bold py-2 px-6 rounded-md hover:bg-red-800"
+            className="bg-red-900 text-gray-200 hover:text-white text-md font-bold py-2 px-6 rounded-md hover:bg-red-800"
           >
             Info & Ticket
           </Link>

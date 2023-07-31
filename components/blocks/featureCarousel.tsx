@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useRouter } from "next/router";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
 import { client } from "../../tina/__generated__/client";
@@ -31,30 +31,32 @@ const FeatureCarousel = () => {
   };
 
   return (
-    <Swiper
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
-      speed={500}
-      loop={true}
-      pagination={{ clickable: true }}
-      modules={[Pagination, Autoplay]}
-    >
-      {carouselData.map((carousel, index) => (
-        <SwiperSlide
-          data-tina-field={tinaField(carousel.node, "title")}
-          onClick={() => navigateDetail(carousel.node._sys.filename)}
-          key={index}
-          className="bg-red-900"
-        >
-          <div className="flex w-screen justify-center align-center hover:cursor-pointer">
-            <img
-              src={carousel.node.feature_image}
-              alt={carousel.node.title}
-              className="h-[450px] object-cover overflow-clip"
-            />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="w-full">
+      <Swiper
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        speed={500}
+        loop={true}
+        pagination={{ clickable: true }}
+        modules={[Pagination, Autoplay]}
+      >
+        {carouselData.map((carousel, index) => (
+          <SwiperSlide
+            data-tina-field={tinaField(carousel.node, "title")}
+            onClick={() => navigateDetail(carousel.node._sys.filename)}
+            key={index}
+            className="bg-red-900"
+          >
+            <div className="flex w-screen justify-center align-center hover:cursor-pointer">
+              <img
+                src={carousel.node.feature_image}
+                alt={carousel.node.title}
+                className="h-[450px] object-cover overflow-clip"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 

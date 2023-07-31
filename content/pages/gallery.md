@@ -11,7 +11,10 @@ blocks:
       - /uploads/llama-4.avif
       - /uploads/llama-5.avif
     _template: gallery
+  - header_line: featureCarousel
+    _template: featureCarousel
 ---
+
 
 
 

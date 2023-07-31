@@ -53,7 +53,7 @@ const MultiCarousel = ({ data }: { data: EventsType[] }) => {
           className="flex justify-center align-center hover:cursor-pointer"
         >
           <img
-            src={carousel.node.event_image}
+            src={carousel.node.event_image[0]}
             alt={carousel.node.title}
             className="w-full h-full object-cover overflow-clip"
           />

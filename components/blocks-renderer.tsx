@@ -11,6 +11,8 @@ import { SeatingChart } from "./blocks/About/seatingChart";
 import { Contact } from "./blocks/Contact/contact";
 import { Gallery } from "./blocks/Gallery/gallery";
 import { EventView } from "./blocks/Ticket/eventView";
+import CalendarView from "./blocks/Ticket/calendarView";
+import FeatureCarousel from "./blocks/featureCarousel";
 
 export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   return (
@@ -48,6 +50,10 @@ const Block = (block: PageBlocks) => {
       return <EventView data={block} />;
     case "PageBlocksHero":
       return <Hero data={block} />;
+    case "PageBlocksCalendarView":
+      return <CalendarView />;
+    case "PageBlocksFeatureCarousel":
+      return <FeatureCarousel />
     case "PageBlocksFeatures":
       return <Features data={block} />;
     case "PageBlocksTestimonial":

@@ -10,6 +10,8 @@ import { seatingChartBlockSchema } from "../block/seating-chart";
 import { contactBlockSchema } from "../block/contact";
 import { galleryBlockSchema } from "../block/gallery";
 import { eventViewBlockSchema } from "../block/eventview";
+import { calendarViewblockSchema } from "../block/calendarview";
+import { featureCarouselblockSchema } from "../block/feature-carousel";
 
 const PageSchema: Collection = {
   label: "Pages",
@@ -56,7 +58,9 @@ const PageSchema: Collection = {
         seatingChartBlockSchema,
         contactBlockSchema,
         galleryBlockSchema,
-        eventViewBlockSchema
+        eventViewBlockSchema,
+        calendarViewblockSchema,
+        featureCarouselblockSchema,
       ],
     },
   ],

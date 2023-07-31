@@ -1,6 +1,8 @@
 ---
 title: Meet Team
 blocks:
+  - header_line: featureCarousel
+    _template: featureCarousel
   - header_line: Meet Team
     team_member:
       - name: Robert
@@ -11,6 +13,7 @@ blocks:
         avatar: /uploads/10.png
     _template: meet_team
 ---
+
 
 
 

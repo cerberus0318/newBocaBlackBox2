@@ -11,9 +11,6 @@ export default function HomePage(
 ) {
   const posts = props.data.postConnection.edges;
 
-  useEffect(() => {
-    console.log("tinaProps,", props);
-  }, []);
   return (
     <Layout>
       <Section className="flex-1">

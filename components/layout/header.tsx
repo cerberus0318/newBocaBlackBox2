@@ -15,7 +15,6 @@ import {
 import { tinaField } from "tinacms/dist/react";
 import { GlobalHeader } from "../../tina/__generated__/types";
 import DropDownMenu from "./dropdown";
-import FeatureCarousel from "../blocks/featureCarousel";
 
 export const Header = ({ data }: { data: GlobalHeader }) => {
   const router = useRouter();
@@ -123,6 +122,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                   return (
                     <button
                       key={item.label + i}
+                      onClick={e => router.push("/home/" + item.venue.slice(15).slice(0, -3))}
                       className="bg-red-900 text-white py-2 px-6 rounded-md hover:bg-red-800"
                     >
                       {item.label}
@@ -149,9 +149,6 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
             } to-transparent bottom-0 left-4 right-4 -z-1 opacity-5`}
           />
         </Container>
-      </div>
-      <div className="w-full">
-        <FeatureCarousel />
       </div>
     </>
   );

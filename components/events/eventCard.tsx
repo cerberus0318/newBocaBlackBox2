@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useEffect } from "react";
 
 const EventCard = (props: any) => {
   const convertDateFormat = (date: string) => {
@@ -23,7 +22,7 @@ const EventCard = (props: any) => {
     <div className="w-full border border-red-900 rounded-sm relative">
       <div className="w-full flex justify-center aligh-center">
         <img
-          src={props?.event?.node?.event_image}
+          src={props?.event?.node?.event_image[0]}
           alt={props?.event?.node?.title}
           className="w-full h-[250px] object-cover"
         />
@@ -32,7 +31,7 @@ const EventCard = (props: any) => {
         <div className="text-center w-full">
           <h1 className="text-md font-bold">{props?.event?.node?.title}</h1>
           <p className="text-sm font-bold italic">
-            {convertDateFormat(props?.event?.node?.event_date)}
+            {convertDateFormat(props?.event?.node?.event_info[0].event_date)}
           </p>
           <p className="text-sm font-bold pt-2 text-red-700 italic">
             Venue: {props?.event?.node?.venue?.name}

@@ -27,6 +27,13 @@ query contentQuery($relativePath: String!) {
   }
 }
 
+query venueQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  venue(relativePath: $relativePath) {
+    ...VenueParts
+  }
+}
+
 query blogPostQuery($relativePath: String!) {
   ...LayoutQueryFragment
   post(relativePath: $relativePath) {
@@ -73,8 +80,10 @@ query eventQuery($relativePath: String!) {
         title
         event_image
         feature_image
-        ticket_link
-        event_date
+        event_info {
+          event_date
+          ticket_link
+        }
         venue {
           ... on Venue {
             name
@@ -86,5 +95,4 @@ query eventQuery($relativePath: String!) {
       }
     }
   }
-
 }

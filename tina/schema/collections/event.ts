@@ -29,6 +29,7 @@ const EventSchema: Collection = {
       label: "Event Logo",
       name: "event_image",
       required: true,
+      list: true
     },
     {
       type: "image",
@@ -36,19 +37,25 @@ const EventSchema: Collection = {
       name: "feature_image",
     },
     {
-      type: "string",
-      label: "Ticket Buy Link",
-      name: "ticket_link",
-      required: true,
-    },
-    {
-      type: "datetime",
-      label: "Event Date",
-      name: "event_date",
-      ui: {
-        timeFormat: "HH:mm",
-      },
-      required: true,
+      type: "object",
+      label: "Event Info",
+      name: "event_info",
+      fields: [
+        {
+          type: "datetime",
+          label: "Event Date",
+          name: "event_date",
+          ui: {
+            timeFormat: "HH:mm",
+          },
+        },
+        {
+          type: "string",
+          label: "Ticket Buy Link",
+          name: "ticket_link",
+        },
+      ],
+      list: true
     },
     {
       type: "reference",
@@ -78,6 +85,21 @@ const EventSchema: Collection = {
       collections: ["rating"],
       required: true,
     },
+    {
+      type: "string",
+      label: "Admission",
+      name: 'admission',
+    },
+    {
+      type: "string",
+      label: "Address",
+      name: "address"
+    },
+    {
+      type: "string",
+      label: "Performers Link",
+      name: "performer_link"
+    }
   ],
 };
 export { EventSchema };
