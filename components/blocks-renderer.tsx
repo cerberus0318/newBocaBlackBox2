@@ -14,7 +14,7 @@ import { EventView } from "./blocks/Ticket/eventView";
 import CalendarView from "./blocks/Ticket/calendarView";
 import FeatureCarousel from "./blocks/featureCarousel";
 
-export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
+export const Blocks = (props: any) => {
   return (
     <>
       {props.blocks

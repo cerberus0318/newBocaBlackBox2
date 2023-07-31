@@ -45,9 +45,9 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const eventData = await client.queries.eventConnection();
+  const eventData = await client.queries.venueConnection();
   return {
-    paths: eventData.data.eventConnection.edges.map((event) => ({
+    paths: eventData.data.venueConnection.edges.map((event) => ({
       params: { type: event.node._sys.filename },
     })),
     fallback: "blocking",

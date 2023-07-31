@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRouter } from "next/router";
-import { Pagination, Autoplay, Thumbs } from "swiper/modules";
+import { Pagination, Autoplay, Thumbs } from "swiper";
 import { EventsType } from "../../pages/home";
 
 import "swiper/css";

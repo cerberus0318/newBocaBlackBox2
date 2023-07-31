@@ -26,6 +26,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
     const getVenueType = async () => {
       const venueData = await client.queries.venueConnection();
       const venues = venueData.data.venueConnection.edges;
+      console.log(venues);
       setVenueTypes(venues);
     };
     getVenueType();
@@ -124,19 +125,19 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
           <div className="flex items-center justify-between gap-6">
             <div className="flex gap-2 sm:gap-4 lg:gap-2">
               {venueTypes &&
-                venueTypes.map((item, i) => {
+                venueTypes.map((item, index) => {
                   return (
                     <button
-                      key={item.label + i}
+                      key={index}
                       onClick={() =>
                         router.push(
                           "/home/" +
-                            item.venue.toString().slice(15).slice(0, -3)
+                            item.node._sys.filename
                         )
                       }
                       className="bg-red-900 text-white py-2 px-6 rounded-md hover:bg-red-800"
                     >
-                      {item.label}
+                      {item.node.name}
                     </button>
                   );
                 })}
