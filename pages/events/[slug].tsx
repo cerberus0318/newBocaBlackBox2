@@ -15,12 +15,15 @@ import { client } from "../../tina/__generated__/client";
 import { Container } from "../../components/util/container";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
 export default function EventDetail(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina(props);
 
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const convertDateFormat = (date: string) => {
     const newDate = new Date(date);
@@ -62,7 +65,7 @@ export default function EventDetail(
         <div className="grid grid-cols-1 md:grid-cols-3 p-8 gap-8 detail-swiper">
           <div className="px-4 col-span-1 md:col-span-2">
             <Swiper
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              autoplay={{ delay: 1000, disableOnInteraction: false }}
               speed={500}
               loop={true}
               spaceBetween={10}

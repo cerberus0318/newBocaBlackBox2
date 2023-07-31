@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const MultiCarousel = ({ data }: { data: EventsType[] }) => {
-
   const router = useRouter();
 
   const navigateDetail = (title) => {
@@ -16,10 +15,14 @@ const MultiCarousel = ({ data }: { data: EventsType[] }) => {
 
   return (
     <Swiper
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      autoplay={{
+        delay: 500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
       speed={500}
       loop={true}
-      pagination={{clickable: true}}
+      pagination={{ clickable: true }}
       modules={[Pagination, Autoplay, Thumbs]}
       slidesPerView={2}
       breakpoints={{
