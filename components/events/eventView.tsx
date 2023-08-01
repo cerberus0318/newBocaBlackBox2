@@ -27,7 +27,6 @@ const EventView = ({ data, venue }: { data: EventsType[], venue: string }) => {
 
   useEffect(() => {
     let filterData = [];
-    console.log(data);
     if (selectedVenue !== "") {
       filterData = data.filter((event) => {
         return event.node?.venue?.name === selectedVenue;

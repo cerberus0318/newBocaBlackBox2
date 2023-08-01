@@ -26,7 +26,6 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
     const getVenueType = async () => {
       const venueData = await client.queries.venueConnection();
       const venues = venueData.data.venueConnection.edges;
-      console.log(venues);
       setVenueTypes(venues);
     };
     getVenueType();

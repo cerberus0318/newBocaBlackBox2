@@ -49,14 +49,23 @@ export const Footer = ({ data }) => {
               })}
           </ul>
           <div className="col-span-4 md:col-span-2 lg:col-span-1 flex flex-col text-white gap-4">
-            <p data-tina-field={tinaField(data.contact, "email")}>Email: {data?.contact?.email}</p>
-            <p data-tina-field={tinaField(data.contact, "contact")}>Contact: {data?.contact?.contact}</p>
-            <p data-tina-field={tinaField(data.contact, "fax")}>Fax: {data?.contact?.fax}</p>
-            <p data-tina-field={tinaField(data.contact, "address")}>{data?.contact?.address}</p>
+            <p data-tina-field={tinaField(data.contact, "email")}>
+              Email: {data?.contact?.email}
+            </p>
+            <p data-tina-field={tinaField(data.contact, "contact")}>
+              Contact: {data?.contact?.contact}
+            </p>
+            <p data-tina-field={tinaField(data.contact, "fax")}>
+              Fax: {data?.contact?.fax}
+            </p>
+            <p data-tina-field={tinaField(data.contact, "address")}>
+              {data?.contact?.address}
+            </p>
           </div>
           <div className="col-span-4 lg:col-span-1 flex gap-4 justify-center">
             {data.social && data.social.facebook && (
               <Link
+                data-tina-field={tinaField(data.social, "facebook")}
                 href={data.social.facebook}
                 className="p-2 bg-red-900 h-fit hover:bg-red-700 rounded-full text-white"
               >
@@ -65,6 +74,7 @@ export const Footer = ({ data }) => {
             )}
             {data.social && data.social.twitter && (
               <Link
+                data-tina-field={tinaField(data.social, "twitter")}
                 href={data.social.twitter}
                 className="p-2 bg-red-900 h-fit hover:bg-red-700 rounded-full text-white"
               >
@@ -73,14 +83,17 @@ export const Footer = ({ data }) => {
             )}
             {data.social && data.social.email && (
               <Link
+                data-tina-field={tinaField(data.social, "email")}
                 href={data.social.email}
-                className="p-2 bg-red-900 h-fit hover:bg-red-700 rounded-full text-white"
+                className="p-2 bg-red-900 h-fit hover:bgapt: error while loading shared libraries: libapt-private.so.0.0: cannot open shared object file: No such file or directory
+                -red-700 rounded-full text-white"
               >
                 <FaEnvelope className="text-2xl" />
               </Link>
             )}
             {data.social && data.social.instagram && (
               <Link
+                data-tina-field={tinaField(data.social, "instagram")}
                 href={data.social.instagram}
                 className="p-2 bg-red-900 h-fit hover:bg-red-700 rounded-full text-white"
               >

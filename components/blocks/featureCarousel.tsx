@@ -42,8 +42,6 @@ const FeatureCarousel = () => {
         loop={true}
         pagination={{ clickable: true }}
         modules={[Pagination, Autoplay, Thumbs]}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {carouselData.map((carousel, index) => (
           <SwiperSlide
@@ -56,7 +54,7 @@ const FeatureCarousel = () => {
               <img
                 src={carousel.node.feature_image}
                 alt={carousel.node.title}
-                className="h-[450px] object-cover overflow-clip"
+                className="h-[250px] md:h-[350px] lg:h-[400px] xl:h-[450px] object-cover overflow-clip"
               />
             </div>
           </SwiperSlide>
