@@ -15,15 +15,15 @@ const updateRenderColorMode = (themeMode: "dark" | "light") => {
 };
 
 const getUserSystemDarkMode = () => {
-  if (typeof window !== "undefined") {
-    const userMedia = window.matchMedia("(prefers-color-scheme: dark)");
+  // if (typeof window !== "undefined") {
+  //   const userMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if (userMedia.matches) {
-      return "dark";
-    }
-  }
+  //   if (userMedia.matches) {
+  //     return "dark";
+  //   }
+  // }
 
-  return "light";
+  return "dark";
 };
 
 export const Theme = ({ data, children }) => {
